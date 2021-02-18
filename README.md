@@ -1,5 +1,24 @@
 # CPS-847 Assignment 1
-Hi
-hello
-Good Afternoon.
-Testing Slack Integration...
+
+- [x] 1.	Create Slack Team (i.e., workspace) for your lab group
+- [x] 2.	Create GitHub repo for your group
+- [x] 3.	[5%] Add ZenHub shell to your GitHub repo
+- [x] 4.	[5%] Integrate ZenHub notifications into Slack and create #zenhub slack channel for the notifications
+- [x] 5.	[5%] Integrate GitHub notifications into Slack and create #github slack channel for the notifications
+- [x] 6.	[5%] Create two Epics with two issues/requirements in each in ZenHub
+- [x] 7.	[5%] Add estimates to each issue (select estimate values at random)
+- [x] 8.	[5%] Create 
+- [x] a.	“Sprint 1” starting on Jan 27, 2021, and ending on Feb 9, 2021, and 
+- [x] b.	“Sprint 2” starting on Feb 10, 2021, and ending on Feb 24, 2021.
+- [x] 9.	[5%] For each Epic, assign one issue/requirement to Sprint 1 and the other one -- to Sprint 2. 
+- [x] 10.	[5%] Close first issue in Sprint 1
+- [x] 11.	[5%] Close Sprint 1
+- [x] 12.	[5%] Add users cps847-chang, tonymisic and kazi-rys-21 to GitHub account
+- [x] 13.	[5%] Send an invite to your slack group to tony.misic@ryerson.ca and chang.chuy@ryerson.ca (as required)
+- [x] 14.	[10%] Build Slack bot echoing questions asked to the bot, add it to your Slack group
+- [x] a.	You will have to run your bot from your machine in the lab so that we can validate its functionality
+- [x] 15.	[5%] Commit the source code of your Slack bot to GitHub repository
+- [x] 16.	[5%] Create file ./git_tst/index.html with some content
+- [x] 17.	[10%] Create two additional branches and modify./git_tst/index.html in both of these branches in such a way that a merge conflict will be provoked. Merge both branches into the master branch and resolve the conflict. 
+- [x] 18.	[5%] While committing the code in step 17, close one of the issues created in step 6 using commit message.
+- [x] 19.	[10%] Create a pull request with a branch name cps847-pull-1 for some modification of ./git_tst/index.html; do the code review (by commenting on the commit in the pull request); merge and close the commit.
