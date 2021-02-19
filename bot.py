@@ -1,5 +1,6 @@
 import slack
 import os
+import json
 from pathlib import Path
 from dotenv import load_dotenv
 from flask import Flask
@@ -49,42 +50,40 @@ def message(payload):
                 city = data["name"]
                 country = data["sys"]["country"]
                 time = data["dt"]
-                message = {
-                    "channel": "ok",
-                    "attachments": [
-                        {
-                            "color": "#",
-                            "title": "Weather in {}, {}:".format(city, country),
-                            "fields": [
-                                {
-                                    "title": "Temperature:",
-                                    "value": "It is {} and feels like {}.".format(temp, feels_temp),
-                                    "short": True
-                                },
-                                {
-                                    "title": "Description:",
-                                    "value": weather_des,
-                                    "short": True
-                                },
-                                {
-                                    "title": "Humidity:",
-                                    "value": humidity,
-                                    "short": True
-                                },
-                                {
-                                    "title": "Atmospheric Pressure:",
-                                    "value": pressure,
-                                    "short": True
-                                }
-                            ],
-                            "thumb_url": weather_icon,
-                            "footer": "OpenWeather.org",
-                            "footer_icon": "https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/icons/logo_32x32.png",
-                            "ts": time,
-                        }
-                    ]
-                }
-                client.chat_postMessage(message)
+                message = json.dumps([
+                    {
+                        "color": "#",
+                        "title": "Weather in {}, {}:".format(city, country),
+                        "fields": [
+                            {
+                                "title": "Temperature:",
+                                "value": "It is {} and feels like {}.".format(temp, feels_temp),
+                                "short": True
+                            },
+                            {
+                                "title": "Description:",
+                                "value": weather_des,
+                                "short": True
+                            },
+                            {
+                                "title": "Humidity:",
+                                "value": humidity,
+                                "short": True
+                            },
+                            {
+                                "title": "Atmospheric Pressure:",
+                                "value": pressure,
+                                "short": True
+                            }
+                        ],
+                        "thumb_url": weather_icon,
+                        "footer": "OpenWeather.org",
+                        "footer_icon": "https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/icons/logo_32x32.png",
+                        "ts": time,
+                    }
+                ])
+                client.chat_postMessage(
+                    channel=channel_id, attachments=message)
 
 
 if __name__ == "__main__":
